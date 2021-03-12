@@ -9,11 +9,8 @@ const reactRules = {
 };
 
 const config = {
-	name: 'browser',
-	mode: 'development',
-	devtool: 'eval-source-map',
+	mode: 'production',
 	entry: [
-		'webpack-hot-middleware/client?reload=true',
 		path.join(CURRENT_WORKING_DIR, 'client/main.js'),
 	],
 	output: {
@@ -23,15 +20,6 @@ const config = {
 	},
 	module: {
 		rules: [reactRules],
-	},
-	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NoEmitOnErrorsPlugin(),
-	],
-	resolve: {
-		alias: {
-			'react-dom': '@hot-loader/react-dom',
-		},
 	},
 };
 
